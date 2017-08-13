@@ -26,6 +26,24 @@ public interface ScoreMapper {
     })
     public List<Score> selectAll();
 
+    @Select("select * from scores where STUDENT_ID = #{id}")
+    @Results(value = {@Result(id = true, property = "studentID", column = "STUDENT_ID"),
+            @Result(property = "studentName", column = "STUDENT_NAME"),
+            @Result(property = "otmScore", column = "按时到校"),//On time score
+            @Result(property = "asnScore", column = "完成作业"),//Assignment score
+            @Result(property = "icbScore", column = "上课发言"),//In class behaving score
+            @Result(property = "clnScore", column = "打扫卫生"),//Cleaning score
+            @Result(property = "gddScore", column = "好人好事"),//Good deed score
+            @Result(property = "gssScore", column = "成绩优异"),//Good score score
+            @Result(property = "pgsScore", column = "学习进步"),//Progressing score
+            @Result(property = "dspScore", column = "遵守纪律"),//Discipline score
+            @Result(property = "hldScore", column = "节日送分"),//Holiday score
+            @Result(property = "gpaScore", column = "集体活动"),//Group activity score
+            @Result(property = "cmpScore", column = "学校比赛"),//Competition score
+            @Result(property = "fmlScore", column = "家庭表现"),//Family behavior score
+    })
+    public Score selectByID(Integer id);
+
     @Insert("insert into scores(" +
             "STUDENT_NAME," +
             "按时到校," +

@@ -1,7 +1,11 @@
 package com.achievement_system.core.controller;
 
+import com.achievement_system.core.model.Article;
 import com.achievement_system.core.model.Score;
+import com.achievement_system.core.service.ArticleService;
 import com.achievement_system.core.service.ScoreService;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
@@ -13,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,20 +26,27 @@ public class ajaxController {
 
     private String mainFrag = "/templates/navigation";
     @Resource(name = "ScoreService")
-    ScoreService scoreService;
+    private ScoreService scoreService;
+
+    @Resource(name = "ArticleService")
+    private ArticleService articleService;
 
     @RequestMapping(value = "/ajax_getStudentInfo")
-    public @ResponseBody String getStudentInfo(@RequestParam("studentID")Integer studentID,Model model){
-        List<Score> scores = scoreService.selectAll();
-        Score found_score = new Score();
-        for (Score s : scores){
-            if(s.getStudentID().equals(studentID)){
-                found_score = s;
-                break;
-            }
-        }
+    public @ResponseBody String getStudentInfo(@RequestParam("studentID")Integer studentID){
+        Score s = scoreService.selectByID(studentID);
         String result;
-        result =  "" + found_score.getOtmScore() + "," + found_score.getAsnScore() + "," + found_score.getIcbScore() + "," + found_score.getClnScore() + "," + found_score.getGddScore() + "," + found_score.getGssScore() + "," + found_score.getPgsScore() + "," + found_score.getDspScore() + "," + found_score.getHldScore() + "," + found_score.getGpaScore() + "," + found_score.getCmpScore() + "," + found_score.getFmlScore();
+        result =  "" + s.getOtmScore() + "," + s.getAsnScore() + "," + s.getIcbScore() + "," + s.getClnScore() + "," + s.getGddScore() + "," + s.getGssScore() + "," + s.getPgsScore() + "," + s.getDspScore() + "," + s.getHldScore() + "," + s.getGpaScore() + "," + s.getCmpScore() + "," + s.getFmlScore();
         return result;
     }
+
+    @RequestMapping(value = "/ajax_getArticleInfo")
+    public @ResponseBody ResponseEntity<String> getArticleInfo(@RequestParam("articleID")Integer articleID, HttpServletResponse response) {
+        Article a = articleService.selectByID(articleID);
+        String result;
+        result = "" + a.getTittle() +'&'+ a.getAuthor() + '&' + a.getContent();
+        HttpHeaders responseHeaders = new HttpHeaders();
+        responseHeaders.add("Content-Type", "text/plain; charset=utf-8");
+        return new ResponseEntity<String>(result, responseHeaders, HttpStatus.CREATED);
+    }
+
 }

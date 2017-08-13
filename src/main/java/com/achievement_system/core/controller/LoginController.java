@@ -2,6 +2,7 @@ package com.achievement_system.core.controller;
 
 
 import com.achievement_system.core.model.*;
+import com.achievement_system.core.service.ArticleService;
 import com.achievement_system.core.service.ScoreService;
 import com.achievement_system.core.service.UserService;
 import org.springframework.stereotype.Controller;
@@ -21,7 +22,7 @@ public class LoginController {
     @Resource(name = "UserService")
     private UserService userService;
     @Resource(name = "ScoreService")
-    ScoreService scoreService;
+    private ScoreService scoreService;
 
     @RequestMapping(method = RequestMethod.GET)
     public String addForm(Model model){

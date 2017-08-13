@@ -1,6 +1,7 @@
 package com.achievement_system.core.controller;
 
 import com.achievement_system.core.model.Score;
+import com.achievement_system.core.service.ArticleService;
 import com.achievement_system.core.service.ScoreService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -17,7 +18,7 @@ public class ScoreController {
 
     private String mainFrag = "/templates/navigation";
     @Resource(name = "ScoreService")
-    ScoreService scoreService;
+    private ScoreService scoreService;
 
     @RequestMapping(method = RequestMethod.GET)
     public String addForm(ModelMap modelMap){

@@ -1,6 +1,7 @@
 package com.achievement_system.core.controller;
 
 import com.achievement_system.core.model.Score;
+import com.achievement_system.core.service.ArticleService;
 import com.achievement_system.core.service.ScoreService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -15,7 +16,7 @@ public class DetailController {
 
     private String mainFrag = "/templates/navigation";
     @Resource(name = "ScoreService")
-    ScoreService scoreService;
+    private ScoreService scoreService;
 
     @RequestMapping(value = "/detail")
     public String detail(ModelMap modelMap){

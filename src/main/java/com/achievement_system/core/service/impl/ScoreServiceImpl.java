@@ -16,6 +16,7 @@ public class ScoreServiceImpl implements ScoreService {
     public List<Score> selectAll() {
         return scoreMapper.selectAll();
     }
+    public Score selectByID(Integer id){return scoreMapper.selectByID(id);}
     public void insertScore(Score score){ scoreMapper.insertScore(score);}
     public void updateScore(Score score){ scoreMapper.updateScore(score);}
     public void deleteScore(Score score){ scoreMapper.deleteScore(score);}

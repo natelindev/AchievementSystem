@@ -1,6 +1,7 @@
 package com.achievement_system.core.controller;
 
 import com.achievement_system.core.model.*;
+import com.achievement_system.core.service.ArticleService;
 import com.achievement_system.core.service.ScoreService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -18,7 +19,7 @@ public class SettingController {
     private String contentPage = "contentPage";
 
     @Resource(name = "ScoreService")
-    ScoreService scoreService;
+    private ScoreService scoreService;
 
     @RequestMapping(method = RequestMethod.GET)
     public String settingsGET(ModelMap modelMap){
@@ -32,7 +33,6 @@ public class SettingController {
 
     @RequestMapping(method = RequestMethod.POST)
     public String settingsPOST(@ModelAttribute("Form")Form form, ModelMap modelMap){
-        modelMap.addAttribute(contentPage,"settings.jsp");
         if (form.getUpdateForm_studentID() > 0) {
             //has something in update form
             Score updateScore = new Score();
@@ -178,6 +178,7 @@ public class SettingController {
             deleteScore.setStudentID(form.getDeleteForm_studentID());
             scoreService.deleteScore(deleteScore);
         }
+        modelMap.addAttribute(contentPage,"settings.jsp");
         modelMap.addAttribute("save",true);
         return mainFrag;
     }
