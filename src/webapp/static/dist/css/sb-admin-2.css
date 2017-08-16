@@ -5,7 +5,6 @@
  */
 
 body {
-    background-color: #f8f8f8;
 }
 
 #wrapper {
@@ -15,7 +14,6 @@ body {
 #page-wrapper {
     padding: 0 15px;
     min-height: 568px;
-    background-color: #fff;
 }
 
 @media(min-width:768px) {
@@ -94,7 +92,7 @@ body {
 }
 
 .sidebar ul li a.active {
-    background-color: #eee;
+    background-color: transparent;
 }
 
 .sidebar .arrow {
@@ -282,7 +280,7 @@ table.dataTable thead .sorting:after {
     padding-top: 10px;
     padding-bottom: 10px;
     border: 1px solid #ddd;
-    background-color: #eee!important;
+    background-color: transparent!important;
 }
 
 .show-grid {
@@ -300,7 +298,7 @@ table.dataTable thead .sorting:after {
 .panel-green > .panel-heading {
     border-color: #5cb85c;
     color: #fff;
-    background-color: #5cb85c;
+    background-color: transparent;
 }
 
 .panel-green a {
@@ -318,7 +316,7 @@ table.dataTable thead .sorting:after {
 .panel-red > .panel-heading {
     border-color: #d9534f;
     color: #fff;
-    background-color: #d9534f;
+    background-color: transparent;
 }
 
 .panel-red a {
@@ -336,7 +334,7 @@ table.dataTable thead .sorting:after {
 .panel-yellow > .panel-heading {
     border-color: #f0ad4e;
     color: #fff;
-    background-color: #f0ad4e;
+    background-color: transparent;
 }
 
 .panel-yellow a {

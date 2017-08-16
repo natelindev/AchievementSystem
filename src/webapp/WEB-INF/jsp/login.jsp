@@ -48,7 +48,7 @@
                         <h3 class="panel-title">请登录学生成就激励系统</h3>
                     </div>
                     <div class="panel-body">
-                        <form:form role="form" modelAttribute="userForm" action="login.html" method="post" >
+                        <form:form role="form" modelAttribute="userForm" action="${pageContext.request.contextPath}/login/${source}.html" method="post" >
                             <fieldset>
                                 <div class="form-group">
                                     <form:input path="userName" class="form-control" placeholder="用户名" name="username" type="text" />
@@ -68,6 +68,16 @@
             </div>
         </div>
     </div>
+
+    <style>
+        body {
+            background: linear-gradient(rgba(248,248,248,0.4), rgba(248,248,248,0.4)),
+            url("../../static/bg1-h.svg") no-repeat;
+            opacity: 0.8;
+            filter: alpha(opacity=80); /* For IE8 and earlier */
+        }
+
+    </style>
 
     <!-- jQuery -->
     <script src="../../static/bower_components/jquery/dist/jquery.min.js"></script>

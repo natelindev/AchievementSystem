@@ -12,7 +12,7 @@
     <title>学生成就激励系统</title>
 
     <!-- icon -->
-    <link rel="shortcut icon" type="image/x-icon" href="../../../static/favicon.ico" />
+    <link rel="icon" type="image/png"  href="../../../static/favicon.png" />
 
     <!-- Bootstrap Core CSS -->
     <link href="../../../static/bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">

@@ -4,7 +4,7 @@
 <div id="page-wrapper">
     <div class="row">
         <div class="col-lg-12">
-            <h1 class="page-header">优秀作文</h1>
+            <h1 class="page-header">作文</h1>
 
         </div>
 
@@ -53,6 +53,17 @@
                 <!-- /.col-lg-8 -->
             </c:otherwise>
         </c:choose>
+
+        <style>
+            #page-wrapper  {
+                background: linear-gradient(rgba(248,248,248,0.1), rgba(248,248,248,0.1)),
+                url("../../../static/bg3.svg") no-repeat;
+                background-size: cover;
+                opacity: 0.8;
+                filter: alpha(opacity=80); /* For IE8 and earlier */
+            }
+
+        </style>
 
     </div>
 </div>

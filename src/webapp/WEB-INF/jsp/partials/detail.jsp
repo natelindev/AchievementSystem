@@ -9,7 +9,7 @@
         </div>
         <!-- /.col-lg-12 -->
         <div class="col-lg-12">
-            <div class="panel panel-info">
+            <div class="panel panel-danger">
                 <div class="panel-heading">
                     分数信息
                 </div>
@@ -57,6 +57,7 @@
                                         <td>${score.studentTotalScore}</td>
                                     </tr>
                                     </c:forEach>
+                                </table>
                             </div>
                             <!-- /.table-responsive -->
                         </c:when>
@@ -72,12 +73,12 @@
         <!-- /.col-lg-12 -->
 
         <style>
-            #page-wrapper  {
-                background: url("../../../static/bg2.jpg") no-repeat;
-                background-size: 100%;
-                height:100%;
-                opacity: 0.9;
-                filter: alpha(opacity=90); /* For IE8 and earlier */
+            body  {
+                background: linear-gradient(rgba(248,248,248,0.1), rgba(248,248,248,0.1)),
+                url("../../../static/bg2.svg") no-repeat;
+                background-size: cover;
+                opacity: 0.8;
+                filter: alpha(opacity=80); /* For IE8 and earlier */
             }
 
         </style>

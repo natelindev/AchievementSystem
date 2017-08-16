@@ -17,7 +17,7 @@
                 <!-- /.panel-heading -->
                 <c:choose>
                     <c:when test="${save == false}">
-                        <form:form modelAttribute="Form" action="article_settings.html" method="post" command="userModel">
+                        <form:form modelAttribute="Form" action="${pageContext.request.contextPath}/article_settings.html" method="post" command="userModel">
                             <div class="panel-body">
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs">
@@ -114,7 +114,7 @@
                             </div>
                         </div>
                         <div class="panel-footer">
-                            <a href="article_settings.html" class="btn btn-outline btn-success">返回</a>
+                            <a href="${pageContext.request.contextPath}/article_settings.html" class="btn btn-outline btn-success">返回</a>
                         </div>
                     </c:otherwise>
                 </c:choose>
@@ -126,7 +126,7 @@
                     $('#update_select_id').change(function(){
                         $.ajax({
                             type: 'POST',
-                            url: 'ajax_getArticleInfo.html',
+                            url: '${pageContext.request.contextPath}/ajax_getArticleInfo.html',
                             data: {articleID: $('#update_select_id').val()},
                             success: function(data) {
                                 var array = data.split('&');
@@ -142,11 +142,11 @@
 
             <style>
                 #page-wrapper  {
-                    background: url("../../../static/bg3.jpg") no-repeat;
-                    background-size: 100%;
-                    height:100%;
-                    opacity: 0.9;
-                    filter: alpha(opacity=90); /* For IE8 and earlier */
+                    background: linear-gradient(rgba(248,248,248,0.1), rgba(248,248,248,0.1)),
+                    url("../../../static/bg4.svg") no-repeat;
+                    background-size: cover;
+                    opacity: 0.8;
+                    filter: alpha(opacity=80); /* For IE8 and earlier */
                 }
 
             </style>
