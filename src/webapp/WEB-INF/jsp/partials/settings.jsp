@@ -244,7 +244,7 @@
             </script>
 
             <style>
-                #page-wrapper  {
+                body  {
                     background: linear-gradient(rgba(248,248,248,0.1), rgba(248,248,248,0.1)),
                     url("../../../static/bg4.svg") no-repeat;
                     background-size: cover;

@@ -14,10 +14,10 @@ $(function() {
         if (width < 768) {
             $('div.navbar-collapse').addClass('collapse');
             topOffset = 100; // 2-row-menu
-            $('.sidebar').css({"padding-bottom":0+"%","margin-bottom":0+"%"});
+            $('.sidebar').css({"padding-bottom":"0%","margin-bottom":"0%"});
         } else {
             $('div.navbar-collapse').removeClass('collapse');
-            $('.sidebar').css({"padding-bottom":"100%","margin-bottom":"-100%"});
+            $('.sidebar').css({"padding-bottom":"1000%","margin-bottom":"-1000%"});
         }
         var height = ((this.window.innerHeight > 0) ? this.window.innerHeight : this.screen.height) - 1;
         height = height - topOffset;

@@ -23,12 +23,9 @@
     </div>
     <!-- /.sidebar-collapse -->
     <style>
-        #wrapper{
-            overflow: hidden;
-        }
         .sidebar{
-            padding-bottom: 100%;
-            margin-bottom: -100%;
+            padding-bottom: 1000%;
+            margin-bottom: -1000%;
         }
     </style>
 </div>

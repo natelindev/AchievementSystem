@@ -48,7 +48,7 @@
 
 <body>
 
-<div id="wrapper">
+<div id="wrapper" style="overflow: hidden">
 
     <!-- Navigation -->
     <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
